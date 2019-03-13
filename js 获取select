@@ -74,3 +74,59 @@ code:
 
 
 
+JS中获取页面单选框radio和复选框checkbox中当前选中的值
+
+单选框：单选框的name值全部相同
+
+             页面有一组单选框的元素<td><input type="radio name="radioid">满意</td>  <td><input type="radio" name="radioid">基本满意</td>  
+
+              var radio=document.getElementsByName("radio");
+
+              var selectvalue=null;   //  selectvalue为radio中选中的值
+             for(int i=0;i<radio.length;i++){
+
+                    if(radio[i].checked==true) {
+
+                             selectvalue=radio[i].value;
+
+                             break;
+
+                   }
+
+            }
+
+多选框：
+
+               页面有一组单选框的元素<td><input type="checkbox" name="radio">满意</td>  <td><input type="checkbox" name="radioid">基本满意</td>  
+
+              var radio=document.getElementByName("radio");
+
+              var selectvalue=new Array();   //  selectvalue为radio中选中的值
+              for(int i=0;i<radio.length;i++){
+
+                    if(radio[i].checked==true) {
+
+                             selectvalue.push(radio[i].value);
+
+                    }
+
+             }
+
+           或者
+
+         
+
+            var radio=document.getElementByName("radio");
+
+              var selectvalue="";   //  selectvalue为radio中选中的值
+             for(int i=0;i<radio.length;i++){
+
+                    if(radio[i].checked==true) {
+
+                             selectvalue=selectvalue+radio[i].value+","; 
+
+                   }
+
+            }
+
+
